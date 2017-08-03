@@ -1,1 +1,13 @@
-text/chapters/*
+text/chapters/02_Introduccion.tex
+text/chapters/03_Objetivos.tex
+text/chapters/04_Planificacion.tex
+text/chapters/05_Analisis.tex
+text/chapters/06_Diseno.tex
+text/chapters/07_Pruebas.tex
+text/chapters/08_Difusion.tex
+text/chapters/09_Conclusiones.tex
+text/chapters/devel_manual.tex
+text/chapters/.DS_Store
+text/chapters/user_manual.tex
+text/chapters/words.dic
+
