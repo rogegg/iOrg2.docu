@@ -79,7 +79,7 @@ Para abordar los problemas descritos y antes de realizar un análisis más profu
 \subsection{El lenguaje de programación}
 
 \bigskip 
-Lo primero que vamos a plantearnos es el \textbf{lenguaje} a usar, y que mejor forma de abrir un abanico de posibilidades que explorar los lenguajes más usados en la comunidad de GitHub\footnote{GitHub es una plataforma de desarrollo colaborativo donde usted puede alojar proyectos propios así como contribuir en otros proycetos. GitHub usa el sistema de control de versiones Git.} desde mediados de 2016 a mediados de 2017.
+Lo primero que vamos a plantearnos es el \textbf{lenguaje} a usar, y que mejor forma de abrir un abanico de posibilidades que explorar los lenguajes más usados en la comunidad de GitHub\footnote{GitHub es una plataforma de desarrollo colaborativo donde usted puede alojar proyectos propios así como contribuir en otros proyectos. GitHub usa el sistema de control de versiones Git.} desde mediados de 2016 a mediados de 2017.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -194,6 +194,57 @@ Ya que necesitamos un repositorio donde poder trabajar con o sin conexión a int
 \bigskip
 Aunque hablaremos de ello más adelante, vamos a tener la precaución de dividir los repositorios del proyecto en dos. Un repositorio será destinado al código fuente y otro a la documentación. Esto nos ayudará en el momento de desplegar la aplicación en un servidor de desarrollo ya que podremos subir los ficheros fuente independientemente sin tener que manejar los ficheros de la documentación en el mismo repositorio.
 
+
+
+\subsection{Entorno de desarrollo}
+
+En un primer momento se pensó en desarrollar la aplicación sin ningún entorno de desarrollo integrado (IDE), simplemente bajo un editor de texto y las herramientas de terminal necesarias. Se planteó esta idea por dos razones principales. La primera que se buscaban herramientas livianas que no aumentaran mucho la carga de procesamiento del equipo en el que se iba a desarrollar y la segunda es que durante el grado nos hemos topado con problemas de los entornos de desarrollo al automatizar muchas tareas, si bien es cierto que esto abstrae al desarrollador de procedimientos repetitivos (por ejemplo lanzar el servidor desde la terminal cada vez que se realizan ciertos cambios en el desarrollo) también puede ser contraproducente al no controlar de forma manual todas estas tareas. Aún así esto siempre dependerá del desarrollador y del buen o mal uso que haga de estos entornos de desarrollo.
+
+\bigskip
+Como decimos, las primeras pruebas se desarrollaron en un editor de textos y una terminal, comprendiendo la instalación de Python y Django, sus paquetes, el entorno virtual, etc. Pronto nos topamos con algunas dificultades a la hora de desarrollar las primeras funcionalidades dentro del entorno virtual de prueba y es que al ser tecnologías nuevas para nosotros, con una sintaxis nueva y una metodología de Django un poco peculiar, invertíamos mucho tiempo en ver si lo que programado estaba bien o no, si había errores de sintaxis, o si la forma era la correcta. Por esto decidimos investigar un poco en los IDE y probar alguno antes de dejar los entornos de prueba y empezar el desarrollo.
+
+\bigskip
+Durante el grado si hemos usado un IDE en algunas asignaturas este ha sido NetBeans y es el primero que exploramos pero, desgraciadamente, no es la mejor opción para Django. Si bien es cierto que encontramos artículos sobre cómo crear proyectos Django con NetBeans, también encontramos muchos artículos desaconsejándolo ya que aunque existen paquetes para poder trabajar con Django, no son muy estables, y al intentar crear un nuevo proyecto de prueba hemos encontrado problemas como :
+
+\begin{itemize}
+  \item Variables de entorno no localizables.
+  \item NetBeans funciona mal con el entorno virtual.
+  \item Paquetes para Django antiguos y desactualizados.
+\end{itemize}
+
+Por esto y sin dedicar mucho a intentar solucionar con paquetes externos estos problemas pasamos al siguiente IDE ya recomendado por compañeros del Grado para Django: PyCharm. Este IDE a diferencia de NetBeans está totalmente integrado con Python y Django y las características que más agilidad van a aportar al desarrollo son:
+
+\begin{itemize}
+  \item Entorno virtual totalmente integrado. Al arrancar el proyecto ya dispones de una consola en este.
+  \item Consola Python con la versión actualmente utilizada.
+  \item Arranca el servidor con el atajo de teclado Mayus+F10.
+  \item Sincronización con el control de versiones utilizado en el entorno virtual.
+\end{itemize}
+
+\bigskip
+En las figuras \ref{fig:pycharm1} y \ref{fig:pycharm2} podemos ver dos capturas de pantalla del entorno de desarrollo.
+
+\begin{figure}[!h]
+  \begin{center}
+  \includegraphics[width=0.6\textwidth]{../images/pycharm1.png}
+  \caption[Pycharm 1/2]{ Captura de pantalla de la zona del proyecto }
+  \label{fig:pycharm1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+  \includegraphics[width=0.6\textwidth]{../images/pycharm2.png}
+  \caption[Pycharm 2/2]{ Captura de pantalla de la zona de la consola }
+  \label{fig:pycharm2}
+  \end{center}
+\end{figure}
+
+\bigskip
+Además JetBrains\footnote{JetBrains: compañía desarrolladora de PyCharm (\href{https://www.jetbrains.com/}{https://www.jetbrains.com/})} ofrece el paquete profesional de PyCharm gratuito a estudiantes al que podemos acceder registrando nuestro correo de estudiante de la Universidad de Granada.
+
+\bigskip 
+Por las pruebas realizadas y las ventajas que ofrece vamos a utilizar PyCharm como IDE.
 
 
 
