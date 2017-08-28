@@ -1,0 +1,35 @@
+usuario anonimo
+------------------
+cu01 - login
+cu02 - registrarse 
+
+usuario alumno y usuario profesor
+------------------
+cu03 - logout.
+cu04 - consulta estadisticas propias.
+cu05 - ver lista de temas de conceptos. && cu06 - consulta de concepto.
+cu07 - ver lista de temas de preguntas tipo test. & cu08 - realizar pregunta tipo test.
+cu09 - ver lista de temas de preguntas verdadero falso. & cu10 - realizar pregunta verdadero falso.
+cu   - ver tipos de exámenes. & cu11 - realizar examen tipo test.
+cu12 - realizar examen verdadero falso.
+
+cu14 - registro estadísticas de preguntas tipo test
+cu13 - registro de estadísticas de preguntas verdadero falso
+cu15 - registro estadísticas de examen verdadero falso
+cu16 - registro estadísticas de examen tipo test
+
+usuario profesor
+------------------
+cu17 - ver estadísticas de un alumno
+cu18 - actualizar datos de conceptos
+
+cu20 - actualizar datos de preguntas tipo test.
+
+cu19 - actualizar datos de preguntas verdadero falso.
+
+
+usuario administrador
+---------------------
+cu21 - dar permisos de profesor a un usuario alumno
+cu22 - Eliminar permisos de profesor a un usuario profesor
+cu23 - eliminar usuario
