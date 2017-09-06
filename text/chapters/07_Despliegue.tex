@@ -94,7 +94,7 @@ Tener un entorno virtual bien configurado lo definiríamos como vital en este pa
 \subsection{Cambios necesarios para el despliegue}
 
 \bigskip
-  Con lo descrito anteriormente ya tenemos subido nuestra aplicación a Heroku pero tendremos nos falta un paso importante a tener en cuenta. Hemos subido un repositorio, con un código fuente, pero Heroku no ejecuta automáticamente el servidor al subirlo, para ello tendremos que añadir un archivo al directorio raíz nombrado ``Procfile'' y que va a contener un ``dyno''\footnote{Basado en contenedores de Linux, un dyno no es más que un contenedor que ejecuta la instrucción que le indiquemos.} con la instrucción para arrancar el servidor. En nuestro caso: 
+  Con lo descrito anteriormente ya tenemos subido nuestra aplicación a Heroku pero tendremos nos falta un paso importante a tener en cuenta. Hemos subido un repositorio, con un código fuente, pero Heroku no ejecuta automáticamente el servidor al subirlo, para ello tendremos que añadir un archivo al directorio raíz nombrado \textbf{``Procfile''} y que va a contener un ``dyno''\footnote{Basado en contenedores de Linux, un dyno no es más que un contenedor que ejecuta la instrucción que le indiquemos.} con la instrucción para arrancar el servidor. En nuestro caso: 
 
   \begin{lstlisting}[language=text]
     web: gunicorn iOrg2.wsgi --log-file -
@@ -117,8 +117,8 @@ Nota: en nuestro caso una de las dependencias no era capaz Heroku de satisfacerl
 
 
 \bigskip
-  Algunas configuraciones locales no funcionan en un servidor en línea por lo que habrá que retocarlas a la hora de desplegar el servidor como es el caso de los \textbf{ficheros estáticos} o ``staticfiles'', estos son las hojas de estilos, imágenes cargadas en el html, etc. Ya que no estábamos familiarizados con estos ficheros al desplegarlos en un servidor, este punto ha dado un poco de trabajo hasta solucionar cómo cargarlos en Heroku. Para ello hemos utilizado el paquete ``WhiteNoise''.
-  
+  Algunas configuraciones locales no funcionan en un servidor en línea por lo que habrá que retocarlas a la hora de desplegar el servidor como es el caso de los \textbf{ficheros estáticos} o ``staticfiles'', estos son las hojas de estilos, imágenes cargadas en el html, iconos, etc. Ya que no estábamos familiarizados con estos ficheros al desplegarlos en un servidor, este punto ha dado un poco de trabajo hasta solucionar cómo cargarlos en Heroku. Para ello hemos utilizado el paquete ``WhiteNoise''.
+
 \bigskip
 Sólo fue necesario añadir WhiteNoise en los paquetes de Django y habilitar el paquete en el fichero de configuración general: 
 
@@ -130,5 +130,34 @@ Sólo fue necesario añadir WhiteNoise en los paquetes de Django y habilitar el 
 \end{lstlisting}
 
 
+\bigskip 
+También configuraremos los \textbf{``hosts'' permitidos}, comprobando que no esté únicamente nuestra dirección local y añadiendo la dirección del servidor:
+
+\begin{lstlisting}[language=python]
+  ALLOWED_HOSTS = ['localhost','_dirección_del_servidor']
+\end{lstlisting}
 
 
+\bigskip
+Ahora sí, tenemos definidas las dependencias, configurados los ficherlos estáticos, permitido el acceso a la nueva dirección y definidas las instrucciones para arrancar el servidor, ya podemos actualizar nuestro repositorio de Heroku y lanzar el servidor indicando a Heroku que ejecute la línea del fichero ``Procfile'':
+
+\begin{lstlisting}[language=bash]
+  $ heroku ps:scale web=1
+\end{lstlisting}
+
+
+\bigskip
+Ya tenemos nuestra aplicación desplegada en Heroku.
+
+\bigskip
+Señalar que podemos lanzar la consola de python desde Heroku si necesitamos realizar cualquier cambio sobre la plataforma, sólo tenemos que ejecutar:
+
+
+\begin{lstlisting}[language=bash]
+  $ heroku run python manage.py shell 
+\end{lstlisting}
+
+
+
+ \bigskip
+ Como podemos ver, para el despliegue de Heroku hemos necesitado realizar algún cambio sobre la configuración local, pero con una correcta gestión del entorno virtual y de los repositorios conseguimos desplegar de forma fácil y eficaz el servidor de testeo.
