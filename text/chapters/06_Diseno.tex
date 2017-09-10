@@ -139,14 +139,13 @@ Como ya explicamos unos capítulos atrás esta es nuestra elección para la part
 Lo primero que vamos a destacar es Django como framework web. Si bien es cierto que durante el {\grado} hemos trabajado con Django, lo hicimos dando unas ligeras pinceladas. En el desarrollo de este proyecto hemos podido comprobar la potencia de esta herramienta que abarca un amplio ámbito de componentes, desde la gestión de las rutas de nuestra aplicación pasando por la integración de los modelos y la base de datos hasta la gestión del controlador y las plantillas.
 
 \bigskip
-Con Django hemos conseguido abstraernos a un nivel un poco mayor de la gestión de la base de datos. Django trabaja con modelos, donde los desarrolladores definen sus ``entidades'' y Django se encarga de gestionarlas en la base de datos (que podemos definir en la configuración de Django) y en nuestro caso es SQLite. Separar estos modelos nos permite, por ejemplo, cambiar la base de datos en cualquier momento y haciendo las migraciones necesarias, al hacer esto los modelos definidos en Django no sufrirán ninguna modificación.
+Con Django hemos conseguido abstraernos a un nivel un poco mayor de la gestión de la base de datos. Django trabaja con modelos, donde los desarrolladores definen sus ``entidades'' y Django se encarga de gestionarlas en la base de datos (que podemos definir en la configuración de Django) y en nuestro caso es SQLite\cite{sqlite}. Separar estos modelos nos permite, por ejemplo, cambiar la base de datos en cualquier momento y haciendo las migraciones necesarias, al hacer esto los modelos definidos en Django no sufrirán ninguna modificación.
 
 \bigskip
 De manera similar diferenciar entre los modelos, vistas y plantillas nos permite realizar un cambio en cualquiera de estos sistemas sin tener que cambiar sustancialmente el otro. Esto ha sido especialmente útil en este proyecto al cambiar la conexión de los modelos a las hojas de Google Drive. En una primera prueba de conexión entre Django y Google Drive, la lectura de varias celdas se hacía algo lenta. A medida que maduraba la implementación dimos con una forma de recorrer estos datos de manera más eficiente. La gestión de los modelos y el cambio que esto supuso no interfirió con las vistas ni las plantillas ya creadas lo que facilitó esta tarea.
 
 \bigskip
 También vamos a destacar que, a nuestro parecer, la curva de aprendizaje de Django es algo complicada. Se necesita tiempo para asimilar los diferentes conceptos que trabaja y los diferentes paquetes que podemos utilizar, cosa que creemos normal en un framework de estas dimensiones. A cambio, la potencia que ofrece este framework es más que notable.
-
 
 
 
@@ -162,7 +161,7 @@ También vamos a destacar que, a nuestro parecer, la curva de aprendizaje de Dja
 
 
 \bigskip
-Para mostrar la información en una aplicación web podríamos decir que lo básico que necesitamos es un lenguaje de marcado (Html5) y un lenguaje con el que definir sus estilos (CSS3). En nuestra aplicación, al igual que nos servimos de paquetes y frameworks en la parte del servidor para no rehacer funcionalidades a bajo nivel, en la parte del cliente nos basaremos en estilos ya predefinidos que nos ayudarán a dar un aspecto a la aplicación. Para esto hemos elegido MaterializeCss que nos permite agrupar los tamaños y colores de los elementos de la aplicación, así como facilitarnos funcionalidades como expandir y contraer listas, mostrar u ocultar el menú lateral en resoluciones de pantalla pequeñas, mostrar ventanas modales y crear la vista de formularios. Para esta interacción y la gestión de estos eventos se hace uso de jQuery.
+Para mostrar la información en una aplicación web podríamos decir que lo básico que necesitamos es un lenguaje de marcado (Html5 \cite{html5}) y un lenguaje con el que definir sus estilos (CSS3 \cite{css3}). En nuestra aplicación, al igual que nos servimos de paquetes y frameworks en la parte del servidor para no rehacer funcionalidades a bajo nivel, en la parte del cliente nos basaremos en estilos ya predefinidos que nos ayudarán a dar un aspecto a la aplicación. Para esto hemos elegido MaterializeCss que nos permite agrupar los tamaños y colores de los elementos de la aplicación, así como facilitarnos funcionalidades como expandir y contraer listas, mostrar u ocultar el menú lateral en resoluciones de pantalla pequeñas, mostrar ventanas modales y crear la vista de formularios. Para esta interacción y la gestión de estos eventos se hace uso de jQuery.
 
 
 \bigskip
